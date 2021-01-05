@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="account" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="accountInfoSettings" xml:space="preserve">
+    <value>Kết nối với tài khoản Google để có thể đồng bộ các bài hát và dữ liệu của bạn.</value>
+  </data>
+  <data name="added" xml:space="preserve">
+    <value>Đã thêm</value>
+  </data>
+  <data name="addPlaylist" xml:space="preserve">
+    <value>Thêm danh sách phát</value>
+  </data>
+  <data name="addToPlaylist" xml:space="preserve">
+    <value>Thêm vào danh sách phát</value>
+  </data>
+  <data name="album" xml:space="preserve">
+    <value>Album</value>
+  </data>
+  <data name="allSong" xml:space="preserve">
+    <value>Tất cả bài hát</value>
+  </data>
+  <data name="allSongs" xml:space="preserve">
+    <value>Tất cả bài hát</value>
+  </data>
+  <data name="analyzingVideo" xml:space="preserve">
+    <value>Đang phân tích video...</value>
+  </data>
+  <data name="appName" xml:space="preserve">
+    <value>Trình phát nhạc</value>
+  </data>
+  <data name="artist" xml:space="preserve">
+    <value>Nghệ sĩ</value>
+  </data>
+  <data name="backedup" xml:space="preserve">
+    <value>Tất cả các bài hát đã được sao lưu</value>
+  </data>
+  <data name="backingup" xml:space="preserve">
+    <value>Đang sao lưu các bài hát của bạn...</value>
+  </data>
+  <data name="backupSongs" xml:space="preserve">
+    <value>Sao lưu tất cả các bài hát của bạn</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="cantAddSong" xml:space="preserve">
+    <value>Không thể thêm bài hát này!</value>
+  </data>
+  <data name="cantGetInfo" xml:space="preserve">
+    <value>Không thể lấy thông tin video!</value>
+  </data>
+  <data name="cantPlaySongNow" xml:space="preserve">
+    <value>Không thể phát bài hát ngay lúc này!</value>
+  </data>
+  <data name="change" xml:space="preserve">
+    <value>Thay đổi</value>
+  </data>
+  <data name="changeAccount" xml:space="preserve">
+    <value>Đổi tài khoản</value>
+  </data>
+  <data name="changeLang" xml:space="preserve">
+    <value>Thay đổi ngôn ngữ</value>
+  </data>
+  <data name="chooseLang" xml:space="preserve">
+    <value>Chọn ngôn ngữ của bạn?</value>
+  </data>
+  <data name="currentAll" xml:space="preserve">
+    <value>Bài hát này hiện đang có trong tất cả danh sách phát!</value>
+  </data>
+  <data name="downloadComplete" xml:space="preserve">
+    <value>Tải xuống hoàn tất!</value>
+  </data>
+  <data name="downloadFailed" xml:space="preserve">
+    <value>Tải xuống không thành công!</value>
+  </data>
+  <data name="downloading" xml:space="preserve">
+    <value>Đang tải xuống</value>
+  </data>
+  <data name="downloadSuccessful" xml:space="preserve">
+    <value>Tải xuống thành công!</value>
+  </data>
+  <data name="downToComputer" xml:space="preserve">
+    <value>Tải nhạc về máy tính</value>
+  </data>
+  <data name="editPlaylist" xml:space="preserve">
+    <value>Chỉnh sửa danh sách phát</value>
+  </data>
+  <data name="english" xml:space="preserve">
+    <value>Tiếng Anh</value>
+  </data>
+  <data name="enterKeywords" xml:space="preserve">
+    <value>Nhập từ khóa</value>
+  </data>
+  <data name="enterKeywordsToSearch" xml:space="preserve">
+    <value>Nhập từ khóa để tìm kiếm</value>
+  </data>
+  <data name="enterSongSearch" xml:space="preserve">
+    <value>Nhập tên bài hát để tìm kiếm</value>
+  </data>
+  <data name="errorTime" xml:space="preserve">
+    <value>Thời gian không hợp lệ!</value>
+  </data>
+  <data name="favorite" xml:space="preserve">
+    <value>Yêu thích</value>
+  </data>
+  <data name="favoriteSongs" xml:space="preserve">
+    <value>Bài hát yêu thích</value>
+  </data>
+  <data name="getInfo" xml:space="preserve">
+    <value>Đang lấy thông tin...</value>
+  </data>
+  <data name="hello" xml:space="preserve">
+    <value>Xin chào!</value>
+  </data>
+  <data name="infoNoPlaylist" xml:space="preserve">
+    <value>Bạn chưa có danh sách phát nào để thêm!</value>
+  </data>
+  <data name="listSongs" xml:space="preserve">
+    <value>Danh sách bài hát</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>Đăng xuất</value>
+  </data>
+  <data name="minute" xml:space="preserve">
+    <value>phút</value>
+  </data>
+  <data name="needAccount" xml:space="preserve">
+    <value>Chức năng này yêu cầu đăng nhập tài khoản</value>
+  </data>
+  <data name="noAlbumsFound" xml:space="preserve">
+    <value>Không tìm thấy album</value>
+  </data>
+  <data name="noArtistsFound" xml:space="preserve">
+    <value>Không tìm thấy nghệ sĩ</value>
+  </data>
+  <data name="noInternetConnection" xml:space="preserve">
+    <value>Không có kết nối Internet!</value>
+  </data>
+  <data name="noPlaylistsFound" xml:space="preserve">
+    <value>Không tìm thấy danh sách phát</value>
+  </data>
+  <data name="noSelectPlaylist" xml:space="preserve">
+    <value>Bạn chưa chọn danh sách nào để thêm!</value>
+  </data>
+  <data name="noSong" xml:space="preserve">
+    <value>Không có bài hát nào</value>
+  </data>
+  <data name="noSongSelect" xml:space="preserve">
+    <value>Chưa có bài hát nào được chọn!</value>
+  </data>
+  <data name="noSongsFound" xml:space="preserve">
+    <value>Không tìm thấy bài hát nào</value>
+  </data>
+  <data name="notification" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+  <data name="numberSongs" xml:space="preserve">
+    <value>Số bài hát:</value>
+  </data>
+  <data name="online" xml:space="preserve">
+    <value>Trực tuyến</value>
+  </data>
+  <data name="playing" xml:space="preserve">
+    <value>Đang phát</value>
+  </data>
+  <data name="playlist" xml:space="preserve">
+    <value>Danh sách phát</value>
+  </data>
+  <data name="playlistInfo" xml:space="preserve">
+    <value>Thông tin danh sách phát</value>
+  </data>
+  <data name="playlists" xml:space="preserve">
+    <value>Danh sách phát</value>
+  </data>
+  <data name="pleaseEnterNamePlaylist" xml:space="preserve">
+    <value>Vui lòng nhập tên danh sách phát!</value>
+  </data>
+  <data name="questionCancel" xml:space="preserve">
+    <value>Tất cả thay đổi sẽ bị hủy bỏ, bạn chắc chắn?</value>
+  </data>
+  <data name="questionChangeAccount" xml:space="preserve">
+    <value>Bạn có muốn thay đổi tài khoản không?</value>
+  </data>
+  <data name="questionDeletePlaylist" xml:space="preserve">
+    <value>Bạn có chắc sẽ xóa danh sách phát này?</value>
+  </data>
+  <data name="questionDeleteSong" xml:space="preserve">
+    <value>Bạn có chắc sẽ xóa bài hát này không?</value>
+  </data>
+  <data name="questionReset" xml:space="preserve">
+    <value>Bạn có chắc sẽ xóa toàn bộ dữ liệu (bài hát yêu thích,danh sách phát, tài khoản...)?</value>
+  </data>
+  <data name="questionSignOut" xml:space="preserve">
+    <value>Bạn có chắc sẽ đăng xuất tài khoản này không?</value>
+  </data>
+  <data name="recent" xml:space="preserve">
+    <value>Gần đây</value>
+  </data>
+  <data name="recentPlaylists" xml:space="preserve">
+    <value>Danh sách phát gần đây</value>
+  </data>
+  <data name="recentSongs" xml:space="preserve">
+    <value>Bài hát gần đây</value>
+  </data>
+  <data name="remaining" xml:space="preserve">
+    <value>Còn lại</value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>Đặt lại</value>
+  </data>
+  <data name="resetApp" xml:space="preserve">
+    <value>Xóa dữ liệu ứng dụng</value>
+  </data>
+  <data name="restartApp" xml:space="preserve">
+    <value>Đặt lại hoàn tất, khởi động lại ứng dụng để tiếp tục...</value>
+  </data>
+  <data name="restored" xml:space="preserve">
+    <value>Tất cả các bài hát đã được khôi phục</value>
+  </data>
+  <data name="restoreSongs" xml:space="preserve">
+    <value>Khôi phục tất cả các bài hát của bạn</value>
+  </data>
+  <data name="restoring" xml:space="preserve">
+    <value>Đang khôi phục các bài hát của bạn...</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="second" xml:space="preserve">
+    <value>giây</value>
+  </data>
+  <data name="selectLanguageApp" xml:space="preserve">
+    <value>Chọn ngôn ngữ ứng dụng</value>
+  </data>
+  <data name="selectPlaylist" xml:space="preserve">
+    <value>Chọn danh sách phát</value>
+  </data>
+  <data name="selectResolution" xml:space="preserve">
+    <value>Chọn độ phân giải video</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Cài đặt</value>
+  </data>
+  <data name="skip" xml:space="preserve">
+    <value>Bỏ qua</value>
+  </data>
+  <data name="songDownloaded" xml:space="preserve">
+    <value>Bài hát này đã được tải</value>
+  </data>
+  <data name="songs" xml:space="preserve">
+    <value>Bài hát</value>
+  </data>
+  <data name="songUnit" xml:space="preserve">
+    <value>bài</value>
+  </data>
+  <data name="step" xml:space="preserve">
+    <value>Thời gian tua khi xem video</value>
+  </data>
+  <data name="sync" xml:space="preserve">
+    <value>Đồng bộ bài hát từ máy tính vào đây</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>Thời lượng:</value>
+  </data>
+  <data name="timerOff" xml:space="preserve">
+    <value>Hẹn giờ tắt nhạc</value>
+  </data>
+  <data name="timerPlay" xml:space="preserve">
+    <value>Hẹn giờ phát nhạc</value>
+  </data>
+  <data name="upToDriver" xml:space="preserve">
+    <value>Tải nhạc lên Google Drive</value>
+  </data>
+  <data name="video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="videoPlaylist" xml:space="preserve">
+    <value>Danh sách video</value>
+  </data>
+  <data name="vietnamese" xml:space="preserve">
+    <value>Tiếng Việt</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Chào mừng!</value>
+  </data>
+  <data name="you1" xml:space="preserve">
+    <value>- Tìm kiếm, nghe nhạc và xem video trên YouTube.</value>
+  </data>
+  <data name="you2" xml:space="preserve">
+    <value>- Tải video trên YouTube về máy tính một cách dễ dàng.</value>
+  </data>
+  <data name="zing1" xml:space="preserve">
+    <value>- Tìm kiếm và nghe nhạc trên Zing MP3 khi có kết nối Internet.</value>
+  </data>
+  <data name="zing2" xml:space="preserve">
+    <value>- Xem bảng xếp hạng các bài hát trên Zing MP3 thời gian thực.</value>
+  </data>
+  <data name="zing3" xml:space="preserve">
+    <value>- Tải nhạc trên Zing MP3 về máy tính một cách dễ dàng.</value>
+  </data>
+  <data name="zingChart" xml:space="preserve">
+    <value>Bảng xếp hạng</value>
+  </data>
+</root>

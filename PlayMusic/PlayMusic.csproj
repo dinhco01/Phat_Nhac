@@ -1,0 +1,1032 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\CefSharp.WinForms.86.0.241\build\CefSharp.WinForms.props" Condition="Exists('packages\CefSharp.WinForms.86.0.241\build\CefSharp.WinForms.props')" />
+  <Import Project="packages\CefSharp.Common.86.0.241\build\CefSharp.Common.props" Condition="Exists('packages\CefSharp.Common.86.0.241\build\CefSharp.Common.props')" />
+  <Import Project="packages\cef.redist.x86.86.0.24\build\cef.redist.x86.props" Condition="Exists('packages\cef.redist.x86.86.0.24\build\cef.redist.x86.props')" />
+  <Import Project="packages\cef.redist.x64.86.0.24\build\cef.redist.x64.props" Condition="Exists('packages\cef.redist.x64.86.0.24\build\cef.redist.x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38D031CF-AF0B-4C6D-A24A-60934D6C3227}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PlayMusic</RootNamespace>
+    <AssemblyName>PlayMusic</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.14.0.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>packages\AngleSharp.0.14.0\lib\net472\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.49.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.49.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.49.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.49.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.49.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.49.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.49.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Core.1.49.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.49.0.2160, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Drive.v3.1.49.0.2160\lib\net45\Google.Apis.Drive.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Oauth2.v2, Version=1.49.0.1869, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Oauth2.v2.1.49.0.1869\lib\net45\Google.Apis.Oauth2.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.49.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.49.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\Library\MP3Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Id3Lib">
+      <HintPath>..\..\..\Library\MP3Lib\Id3Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mp3Lib">
+      <HintPath>..\..\..\Library\MP3Lib\Mp3Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NReco.VideoConverter, Version=1.1.4.0, Culture=neutral, PublicKeyToken=395ccb334978a0cd, processorArchitecture=MSIL">
+      <HintPath>packages\NReco.VideoConverter.1.1.4\lib\net40\NReco.VideoConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="NReco.VideoInfo.LT, Version=1.1.0.0, Culture=neutral, PublicKeyToken=8f59ee36d2987295, processorArchitecture=MSIL">
+      <HintPath>packages\NReco.VideoInfo.LT.1.1.0\lib\net20\NReco.VideoInfo.LT.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encoding.CodePages.4.5.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.4.7.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TagLibSharp, Version=2.2.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <HintPath>packages\TagLibSharp.2.2.0\lib\net45\TagLibSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="YoutubeExplode, Version=5.1.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\YoutubeExplode.5.1.9\lib\net461\YoutubeExplode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChildForm\FormWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\FormWaiting.Designer.cs">
+      <DependentUpon>FormWaiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\MusicFromZingMP3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\MusicFromZingMP3.Designer.cs">
+      <DependentUpon>MusicFromZingMP3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\OnlineSource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\OnlineSource.Designer.cs">
+      <DependentUpon>OnlineSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\PlaylistMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\PlaylistMusic.Designer.cs">
+      <DependentUpon>PlaylistMusic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\SettingsMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\SettingsMusic.Designer.cs">
+      <DependentUpon>SettingsMusic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\SongsMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\SongsMusic.Designer.cs">
+      <DependentUpon>SongsMusic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\VideoFromYoutube.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\VideoFromYoutube.Designer.cs">
+      <DependentUpon>VideoFromYoutube.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\VideoPlaying.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\VideoPlaying.Designer.cs">
+      <DependentUpon>VideoPlaying.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\VideosPlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\VideosPlay.Designer.cs">
+      <DependentUpon>VideosPlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lang\MyResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lang\MyResource.vi-VN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyResource.vi-VN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lang\MyResource.en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyResource.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DriverAPI.cs" />
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="Model\Mp3Player.cs" />
+    <Compile Include="ChildForm\PlayingMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\PlayingMusic.Designer.cs">
+      <DependentUpon>PlayingMusic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ZingMP3API\SearchResult.cs" />
+    <Compile Include="Model\ZingMP3API\ZingChart.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ChildForm\RecentPlays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\RecentPlays.Designer.cs">
+      <DependentUpon>RecentPlays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\RoundPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChildForm\SearchMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\SearchMusic.Designer.cs">
+      <DependentUpon>SearchMusic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FromYoutube\Downloading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\FromYoutube\Downloading.Designer.cs">
+      <DependentUpon>Downloading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FromYoutube\SelectResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\FromYoutube\SelectResolution.Designer.cs">
+      <DependentUpon>SelectResolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FromYoutube\VideoResolutionItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FromYoutube\VideoResolutionItem.Designer.cs">
+      <DependentUpon>VideoResolutionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FromZingMP3\DownloadingZingMP3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\FromZingMP3\DownloadingZingMP3.Designer.cs">
+      <DependentUpon>DownloadingZingMP3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FromZingMP3\Song_Ranking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FromZingMP3\Song_Ranking.Designer.cs">
+      <DependentUpon>Song_Ranking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FromZingMP3\Song_ZingMP3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FromZingMP3\Song_ZingMP3.Designer.cs">
+      <DependentUpon>Song_ZingMP3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PlayingMusic\Song_Playing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PlayingMusic\Song_Playing.Designer.cs">
+      <DependentUpon>Song_Playing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\TrackBarCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\TrackBarCustom.Designer.cs">
+      <DependentUpon>TrackBarCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Playlist\Playlist_Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\Playlist\Playlist_Detail.Designer.cs">
+      <DependentUpon>Playlist_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Playlist\Playlist_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Playlist\Playlist_Item.Designer.cs">
+      <DependentUpon>Playlist_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Playlist\AddEditPlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\Playlist\AddEditPlaylist.Designer.cs">
+      <DependentUpon>AddEditPlaylist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Playlist\SelectSong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Playlist\SelectSong.Designer.cs">
+      <DependentUpon>SelectSong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Playlist\Song_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Playlist\Song_Item.Designer.cs">
+      <DependentUpon>Song_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Recent\UC_Playlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Recent\UC_Playlist.Designer.cs">
+      <DependentUpon>UC_Playlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Recent\SongRecents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Recent\SongRecents.Designer.cs">
+      <DependentUpon>SongRecents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Settings\RestoreAndBackupSongs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\Settings\RestoreAndBackupSongs.Designer.cs">
+      <DependentUpon>RestoreAndBackupSongs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Settings\SelectLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\Settings\SelectLanguage.Designer.cs">
+      <DependentUpon>SelectLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\AddPlaylistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\AddPlaylistForm.Designer.cs">
+      <DependentUpon>AddPlaylistForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\PlaylistTag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\PlaylistTag.Designer.cs">
+      <DependentUpon>PlaylistTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\Song_Artist_Album.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\Song_Artist_Album.Designer.cs">
+      <DependentUpon>Song_Artist_Album.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\UC_Album.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\UC_Album.Designer.cs">
+      <DependentUpon>UC_Album.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\UC_Artist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\UC_Artist.Designer.cs">
+      <DependentUpon>UC_Artist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\UC_Song.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\UC_Song.Designer.cs">
+      <DependentUpon>UC_Song.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\UC_Song_mini.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SongMusic\UC_Song_mini.Designer.cs">
+      <DependentUpon>UC_Song_mini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VideoPlay\UC_VideoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\VideoPlay\UC_VideoItem.Designer.cs">
+      <DependentUpon>UC_VideoItem.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChildForm\FormWaiting.resx">
+      <DependentUpon>FormWaiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\MusicFromZingMP3.resx">
+      <DependentUpon>MusicFromZingMP3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\OnlineSource.resx">
+      <DependentUpon>OnlineSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\PlaylistMusic.resx">
+      <DependentUpon>PlaylistMusic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\SettingsMusic.resx">
+      <DependentUpon>SettingsMusic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\SongsMusic.resx">
+      <DependentUpon>SongsMusic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\VideoFromYoutube.resx">
+      <DependentUpon>VideoFromYoutube.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\VideoPlaying.resx">
+      <DependentUpon>VideoPlaying.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\VideosPlay.resx">
+      <DependentUpon>VideosPlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\MyResource.vi-VN.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyResource.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\MyResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\MyResource.en-US.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyResource.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\PlayingMusic.resx">
+      <DependentUpon>PlayingMusic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ChildForm\RecentPlays.resx">
+      <DependentUpon>RecentPlays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\SearchMusic.resx">
+      <DependentUpon>SearchMusic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FromYoutube\Downloading.resx">
+      <DependentUpon>Downloading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FromYoutube\SelectResolution.resx">
+      <DependentUpon>SelectResolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FromYoutube\VideoResolutionItem.resx">
+      <DependentUpon>VideoResolutionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FromZingMP3\DownloadingZingMP3.resx">
+      <DependentUpon>DownloadingZingMP3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FromZingMP3\Song_Ranking.resx">
+      <DependentUpon>Song_Ranking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FromZingMP3\Song_ZingMP3.resx">
+      <DependentUpon>Song_ZingMP3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PlayingMusic\Song_Playing.resx">
+      <DependentUpon>Song_Playing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Playlist\Playlist_Detail.resx">
+      <DependentUpon>Playlist_Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Playlist\Playlist_Item.resx">
+      <DependentUpon>Playlist_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Playlist\AddEditPlaylist.resx">
+      <DependentUpon>AddEditPlaylist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Playlist\SelectSong.resx">
+      <DependentUpon>SelectSong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Playlist\Song_Item.resx">
+      <DependentUpon>Song_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Recent\UC_Playlist.resx">
+      <DependentUpon>UC_Playlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Recent\SongRecents.resx">
+      <DependentUpon>SongRecents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Settings\RestoreAndBackupSongs.resx">
+      <DependentUpon>RestoreAndBackupSongs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Settings\SelectLanguage.resx">
+      <DependentUpon>SelectLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SongMusic\AddPlaylistForm.resx">
+      <DependentUpon>AddPlaylistForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SongMusic\PlaylistTag.resx">
+      <DependentUpon>PlaylistTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SongMusic\Song_Artist_Album.resx">
+      <DependentUpon>Song_Artist_Album.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SongMusic\UC_Album.resx">
+      <DependentUpon>UC_Album.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SongMusic\UC_Artist.resx">
+      <DependentUpon>UC_Artist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SongMusic\UC_Song.resx">
+      <DependentUpon>UC_Song.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SongMusic\UC_Song_mini.resx">
+      <DependentUpon>UC_Song_mini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\VideoPlay\UC_VideoItem.resx">
+      <DependentUpon>UC_VideoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="credentialsGoogleDriveAPI.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playing_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuffle_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_one_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuffle_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\song_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_song_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_song_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mute_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\audio_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_audio_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playing_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playing_blue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musical_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musical_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\triangle_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recent_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recent_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple_music.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artist_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\album_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artist_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\album_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_circled_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_circled_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ffprobe.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\erase_blue.png" />
+    <None Include="Resources\heart_pink.png" />
+    <None Include="Resources\language_gray.png" />
+    <None Include="Resources\google_icon.png" />
+    <None Include="Resources\background.jpg" />
+    <None Include="Resources\video_local_gray.png" />
+    <None Include="Resources\video_local_blue.png" />
+    <None Include="Resources\change_gray.png" />
+    <None Include="Resources\change_blue.png" />
+    <None Include="Resources\languge_blue.png" />
+    <None Include="Resources\music_gif.gif" />
+    <None Include="Resources\synchronize_gray.png" />
+    <None Include="Resources\synchronize_blue.png" />
+    <None Include="Resources\driver_icon.png" />
+    <None Include="Resources\upload_to_the_cloud_gray1.png" />
+    <None Include="Resources\play_music_settings_blue1.png" />
+    <None Include="Resources\fill.PNG" />
+    <None Include="Resources\download_from_cloud_gray1.png" />
+    <None Include="Resources\console.png" />
+    <None Include="Resources\applist.png" />
+    <None Include="Resources\upload_to_the_cloud_gray.png" />
+    <None Include="Resources\download_from_cloud_gray.png" />
+    <None Include="Resources\play_music_settings_blue.png" />
+    <None Include="Resources\youtube_gray.png" />
+    <None Include="Resources\youtube1.jpg" />
+    <None Include="Resources\search_gray.png" />
+    <None Include="Resources\line_chart_gray.png" />
+    <None Include="Resources\line_chart_blue.png" />
+    <None Include="Resources\download_zing_gray.png" />
+    <None Include="Resources\download_zing_blue.png" />
+    <None Include="Resources\youtube.jpg" />
+    <None Include="Resources\cinema_blue.png" />
+    <None Include="Resources\downloads_blue.png" />
+    <None Include="Resources\home_page_blue.png" />
+    <None Include="Resources\reload_blue.png" />
+    <None Include="Resources\go_blue.png" />
+    <None Include="Resources\download_blue.png" />
+    <None Include="Resources\chevron_right_gray.png" />
+    <None Include="Resources\chevron_right_blue1.png" />
+    <None Include="Resources\chevron_left_gray.png" />
+    <None Include="Resources\chevron_left_blue.png" />
+    <None Include="Resources\chevron_right_blue.png" />
+    <None Include="Resources\youtube_red.png" />
+    <None Include="Resources\zing_mp3_icon_color.png" />
+    <None Include="Resources\youtube_blue.png" />
+    <None Include="Resources\online_white.png" />
+    <None Include="Resources\online_blue.png" />
+    <None Include="Resources\check_ok_blue.png" />
+    <None Include="Resources\frame.png" />
+    <None Include="Resources\loader.gif" />
+    <None Include="Resources\male_user_blue.png" />
+    <None Include="Resources\change_user_blue.png" />
+    <None Include="Resources\login_blue.png" />
+    <None Include="Resources\sign_out_blue.png" />
+    <None Include="Resources\replay_video_blue.png" />
+    <None Include="Resources\clock_blue.png" />
+    <None Include="Resources\download_from_cloud_blue.png" />
+    <None Include="Resources\upload_to_the_cloud_blue.png" />
+    <None Include="Resources\cloud_sync_blue.png" />
+    <None Include="Resources\toggle_on_blue.png" />
+    <None Include="Resources\toggle_off_blue.png" />
+    <None Include="Resources\stop_red.png" />
+    <None Include="Resources\full_screen_blue.png" />
+    <None Include="Resources\full_screen_gray.png" />
+    <None Include="Resources\forward_10_blue.png" />
+    <None Include="Resources\forward_30_blue.png" />
+    <None Include="Resources\forward_5_blue.png" />
+    <None Include="Resources\replay_10_blue.png" />
+    <None Include="Resources\replay_5_blue.png" />
+    <None Include="Resources\replay_30_blue.png" />
+    <None Include="Resources\stop_gray.png" />
+    <None Include="Resources\stop_blue.png" />
+    <None Include="Resources\test.jpg" />
+    <None Include="Resources\browse_folder_blue.png" />
+    <None Include="Resources\browse_folder_gray.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\cef.redist.x64.86.0.24\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cef.redist.x64.86.0.24\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('packages\cef.redist.x86.86.0.24\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cef.redist.x86.86.0.24\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('packages\CefSharp.Common.86.0.241\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Common.86.0.241\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('packages\CefSharp.Common.86.0.241\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Common.86.0.241\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('packages\CefSharp.WinForms.86.0.241\build\CefSharp.WinForms.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.WinForms.86.0.241\build\CefSharp.WinForms.props'))" />
+    <Error Condition="!Exists('packages\CefSharp.WinForms.86.0.241\build\CefSharp.WinForms.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.WinForms.86.0.241\build\CefSharp.WinForms.targets'))" />
+  </Target>
+  <Import Project="packages\CefSharp.Common.86.0.241\build\CefSharp.Common.targets" Condition="Exists('packages\CefSharp.Common.86.0.241\build\CefSharp.Common.targets')" />
+  <Import Project="packages\CefSharp.WinForms.86.0.241\build\CefSharp.WinForms.targets" Condition="Exists('packages\CefSharp.WinForms.86.0.241\build\CefSharp.WinForms.targets')" />
+</Project>

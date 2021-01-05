@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="accountInfoSettings" xml:space="preserve">
+    <value>Connect with Google account to be able to sync your songs and data.</value>
+  </data>
+  <data name="added" xml:space="preserve">
+    <value>Added</value>
+  </data>
+  <data name="addPlaylist" xml:space="preserve">
+    <value>Add playlist</value>
+  </data>
+  <data name="addToPlaylist" xml:space="preserve">
+    <value>Add to playlist</value>
+  </data>
+  <data name="album" xml:space="preserve">
+    <value>Album</value>
+  </data>
+  <data name="allSong" xml:space="preserve">
+    <value>All songs</value>
+  </data>
+  <data name="allSongs" xml:space="preserve">
+    <value>All songs</value>
+  </data>
+  <data name="analyzingVideo" xml:space="preserve">
+    <value>Analyzing video...</value>
+  </data>
+  <data name="appName" xml:space="preserve">
+    <value>Play Music</value>
+  </data>
+  <data name="artist" xml:space="preserve">
+    <value>Artist</value>
+  </data>
+  <data name="backedup" xml:space="preserve">
+    <value>All songs have been backed up</value>
+  </data>
+  <data name="backingup" xml:space="preserve">
+    <value>Backing up your songs...</value>
+  </data>
+  <data name="backupSongs" xml:space="preserve">
+    <value>Backup all your songs</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="cantAddSong" xml:space="preserve">
+    <value>Can't add this song!</value>
+  </data>
+  <data name="cantGetInfo" xml:space="preserve">
+    <value>Can't get video information!</value>
+  </data>
+  <data name="cantPlaySongNow" xml:space="preserve">
+    <value>Can't play this song now!</value>
+  </data>
+  <data name="change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="changeAccount" xml:space="preserve">
+    <value>Change account</value>
+  </data>
+  <data name="changeLang" xml:space="preserve">
+    <value>Change language</value>
+  </data>
+  <data name="chooseLang" xml:space="preserve">
+    <value>Choose your language?</value>
+  </data>
+  <data name="currentAll" xml:space="preserve">
+    <value>This song is currently in all playlists!</value>
+  </data>
+  <data name="downloadComplete" xml:space="preserve">
+    <value>Download complete!</value>
+  </data>
+  <data name="downloadFailed" xml:space="preserve">
+    <value>Download failed!</value>
+  </data>
+  <data name="downloading" xml:space="preserve">
+    <value>Downloading</value>
+  </data>
+  <data name="downloadSuccessful" xml:space="preserve">
+    <value>Download successful!</value>
+  </data>
+  <data name="downToComputer" xml:space="preserve">
+    <value>Download music to your computer</value>
+  </data>
+  <data name="editPlaylist" xml:space="preserve">
+    <value>Edit playlist</value>
+  </data>
+  <data name="english" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="enterKeywords" xml:space="preserve">
+    <value>Enter keywords</value>
+  </data>
+  <data name="enterKeywordsToSearch" xml:space="preserve">
+    <value>Enter keywords to search</value>
+  </data>
+  <data name="enterSongSearch" xml:space="preserve">
+    <value>Enter the song name to search</value>
+  </data>
+  <data name="errorTime" xml:space="preserve">
+    <value>Invalid time!</value>
+  </data>
+  <data name="favorite" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="favoriteSongs" xml:space="preserve">
+    <value>Favotite songs</value>
+  </data>
+  <data name="getInfo" xml:space="preserve">
+    <value>Retrieving information...</value>
+  </data>
+  <data name="hello" xml:space="preserve">
+    <value>Hello!</value>
+  </data>
+  <data name="infoNoPlaylist" xml:space="preserve">
+    <value>You don't have a playlist to add yet!</value>
+  </data>
+  <data name="listSongs" xml:space="preserve">
+    <value>List of songs</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="minute" xml:space="preserve">
+    <value>minute</value>
+  </data>
+  <data name="needAccount" xml:space="preserve">
+    <value>This feature requires an account login</value>
+  </data>
+  <data name="noAlbumsFound" xml:space="preserve">
+    <value>No album found</value>
+  </data>
+  <data name="noArtistsFound" xml:space="preserve">
+    <value>No artist found</value>
+  </data>
+  <data name="noInternetConnection" xml:space="preserve">
+    <value>No Internet connection!</value>
+  </data>
+  <data name="noPlaylistsFound" xml:space="preserve">
+    <value>No playlist found</value>
+  </data>
+  <data name="noSelectPlaylist" xml:space="preserve">
+    <value>You have not selected any list to add!</value>
+  </data>
+  <data name="noSong" xml:space="preserve">
+    <value>No songs yet</value>
+  </data>
+  <data name="noSongSelect" xml:space="preserve">
+    <value>No songs have been selected!</value>
+  </data>
+  <data name="noSongsFound" xml:space="preserve">
+    <value>No song found</value>
+  </data>
+  <data name="notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="numberSongs" xml:space="preserve">
+    <value>Number of songs:</value>
+  </data>
+  <data name="online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="playing" xml:space="preserve">
+    <value>Playing</value>
+  </data>
+  <data name="playlist" xml:space="preserve">
+    <value>Playlist</value>
+  </data>
+  <data name="playlistInfo" xml:space="preserve">
+    <value>Playlist infomation</value>
+  </data>
+  <data name="playlists" xml:space="preserve">
+    <value>Playlists</value>
+  </data>
+  <data name="pleaseEnterNamePlaylist" xml:space="preserve">
+    <value>Please enter a playlist name!</value>
+  </data>
+  <data name="questionCancel" xml:space="preserve">
+    <value>All changes will be canceled, are you sure?</value>
+  </data>
+  <data name="questionChangeAccount" xml:space="preserve">
+    <value>Do you want to change your account?</value>
+  </data>
+  <data name="questionDeletePlaylist" xml:space="preserve">
+    <value>Are you sure you will delete this playlist?</value>
+  </data>
+  <data name="questionDeleteSong" xml:space="preserve">
+    <value>Are you sure you will delete this song?</value>
+  </data>
+  <data name="questionReset" xml:space="preserve">
+    <value>Are you sure you will delete all data (favorite songs, playlists, accounts...)?</value>
+  </data>
+  <data name="questionSignOut" xml:space="preserve">
+    <value>Are you sure you will sign out of this account?</value>
+  </data>
+  <data name="recent" xml:space="preserve">
+    <value>Recent</value>
+  </data>
+  <data name="recentPlaylists" xml:space="preserve">
+    <value>Recent playlists</value>
+  </data>
+  <data name="recentSongs" xml:space="preserve">
+    <value>Recent songs</value>
+  </data>
+  <data name="remaining" xml:space="preserve">
+    <value>Remaining</value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="resetApp" xml:space="preserve">
+    <value>Delete application data</value>
+  </data>
+  <data name="restartApp" xml:space="preserve">
+    <value>Reset is complete, restart the app to continue...</value>
+  </data>
+  <data name="restored" xml:space="preserve">
+    <value>All songs have been restored</value>
+  </data>
+  <data name="restoreSongs" xml:space="preserve">
+    <value>Restore all your songs</value>
+  </data>
+  <data name="restoring" xml:space="preserve">
+    <value>Restoring your songs...</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="second" xml:space="preserve">
+    <value>second</value>
+  </data>
+  <data name="selectLanguageApp" xml:space="preserve">
+    <value>Select the application language</value>
+  </data>
+  <data name="selectPlaylist" xml:space="preserve">
+    <value>Select a playlist</value>
+  </data>
+  <data name="selectResolution" xml:space="preserve">
+    <value>Select video resolution</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="skip" xml:space="preserve">
+    <value>Skip</value>
+  </data>
+  <data name="songDownloaded" xml:space="preserve">
+    <value>This song is downloaded</value>
+  </data>
+  <data name="songs" xml:space="preserve">
+    <value>Songs</value>
+  </data>
+  <data name="songUnit" xml:space="preserve">
+    <value>songs</value>
+  </data>
+  <data name="step" xml:space="preserve">
+    <value>Backward and forward while watching video</value>
+  </data>
+  <data name="sync" xml:space="preserve">
+    <value>Sync songs from your computer here</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>Time:</value>
+  </data>
+  <data name="timerOff" xml:space="preserve">
+    <value>Timer to turn off music</value>
+  </data>
+  <data name="timerPlay" xml:space="preserve">
+    <value>Timer to play music</value>
+  </data>
+  <data name="upToDriver" xml:space="preserve">
+    <value>Upload music to Google Drive</value>
+  </data>
+  <data name="video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="videoPlaylist" xml:space="preserve">
+    <value>Video playlist</value>
+  </data>
+  <data name="vietnamese" xml:space="preserve">
+    <value>Vietnamese</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Welcome!</value>
+  </data>
+  <data name="you1" xml:space="preserve">
+    <value>- Search, listen to music and watch videos on YouTube.</value>
+  </data>
+  <data name="you2" xml:space="preserve">
+    <value>- Download videos on YouTube to your computer easily.</value>
+  </data>
+  <data name="zing1" xml:space="preserve">
+    <value>- Search and listen to music on Zing MP3 when there is an Internet connection.</value>
+  </data>
+  <data name="zing2" xml:space="preserve">
+    <value>- View the charts of songs on Zing MP3 in real time.</value>
+  </data>
+  <data name="zing3" xml:space="preserve">
+    <value>- Download music on Zing MP3 to your computer easily.</value>
+  </data>
+  <data name="zingChart" xml:space="preserve">
+    <value>Zing Chart</value>
+  </data>
+</root>
